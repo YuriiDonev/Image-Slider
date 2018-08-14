@@ -8,10 +8,14 @@ import moment from 'moment';
     }
 
     return (
-      <div className='video-item' onClick={play}>
-        <div className='video-title-container'><div className='video-title'>{props.description}</div></div>
-        <div className='img-container'><img src={props.url} alt='' /></div>
-        <div className='video-published-date'>{moment(props.publishDate).format('YYYY-MM-DD')}</div>
+      <div className='video-item-container'>
+        <div className='video-item' onClick={play}>
+          <div className='video-title-container'><div className='video-title'>{props.description}</div></div>
+          <div className='img-container'><img src={props.url} alt='' /></div>
+          <div className='published-date-container'>
+            <div className='published-date'>{moment(props.publishDate).format('DD MMM YYYY')}</div>
+          </div>
+        </div>
       </div>
     );
   };

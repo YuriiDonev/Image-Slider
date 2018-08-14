@@ -56,7 +56,7 @@ class Slider extends Component {
           {
             (this.props.videos.length < 3) ? <div className='container keep-search'>{'Keep Searching...'}</div> :
             <div className='container'>
-              <button className='previous' onClick={this.showPreviousVideos} />
+              <div className='previous' onClick={this.showPreviousVideos} />
               <div className='videos-container'>
                 {
                   renderVideos.map((video, i) =>
@@ -70,7 +70,7 @@ class Slider extends Component {
                   />)
                 }
               </div>
-            <button className='next' onClick={this.showNextVideos} />
+            <div className='next' onClick={this.showNextVideos} />
           </div>
           }
         </div>
@@ -91,3 +91,37 @@ const actions = {
 };
 
 export default connect(mapStateToProps, actions)(Slider);
+
+
+// render() {
+//   const renderVideos = this.props.videos.filter((video, i) => i >= this.props.currentVideoIndex.currentFirstIndex &&
+//   i <= this.props.currentVideoIndex.currentLastIndex );
+//
+//   return (
+//     <div className='wrapper'>
+//       <div className='app'>
+//       <Search />
+//         {
+//           (this.props.videos.length < 3) ? <div className='container keep-search'>{'Keep Searching...'}</div> :
+//           <div className='container'>
+//             <button className='previous' onClick={this.showPreviousVideos}>PREV</button>
+//             <div className='videos-container'>
+//               {
+//                 renderVideos.map((video, i) =>
+//                 <Video
+//                   key={i}
+//                   id={video.id.videoId}
+//                   url={video.snippet.thumbnails.medium.url}
+//                   description={video.snippet.description}
+//                   publishDate={video.snippet.publishedAt}
+//                   playVideo={this.playVideoInPlayer}
+//                 />)
+//               }
+//             </div>
+//           <button className='next' onClick={this.showNextVideos}>NEXT</button>
+//         </div>
+//         }
+//       </div>
+//     </div>
+//   );
+// }

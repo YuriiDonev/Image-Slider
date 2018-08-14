@@ -1,3 +1,4 @@
+@import url(//fonts.googleapis.com/css?family=Concert+One);
 body {
   margin: 0;
   padding: 0;
@@ -8,117 +9,158 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("../images/background.png");
-  background-repeat: no-repeat;
-  background-size: 130%;
-  background-position: 100% 38%; }
+  background: url("../images/bg_main.png") no-repeat center/cover; }
   .wrapper .app {
+    position: relative;
     display: flex;
     flex-direction: column;
-    width: 70%;
-    min-width: 1000px; }
+    width: 100%;
+    max-width: 660px;
+    max-height: 245px; }
     .wrapper .app .container {
       display: flex;
       flex-direction: row;
       align-items: center;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.7);
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px; }
-      .wrapper .app .container button {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      width: inherit;
+      height: 205px; }
+      .wrapper .app .container .previous, .wrapper .app .container .next {
         position: absolute;
-        width: 40px;
-        height: 40px;
+        z-index: 1;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
-        border: none;
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: center;
-        outline: none;
         cursor: pointer; }
       .wrapper .app .container .previous {
-        background-image: url("../images/prev.png");
-        left: 15.2%; }
+        left: 10px;
+        background: url("../images/prev.png") no-repeat center/cover; }
       .wrapper .app .container .next {
-        background-image: url("../images/next.png");
-        right: 15.1%; }
+        right: 10px;
+        background: url("../images/next.png") no-repeat center/cover; }
       .wrapper .app .container.keep-search {
-        height: 277px;
+        height: 205px;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 20px;
         font-weight: 600; }
 
-.search {
+@media screen and (max-width: 700px) {
+  /* Here will be located styles for small screen devices */
+  .wrapper {
+    background: red; } }
+
+.search-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px 10px 20px;
-  background-color: black;
-  color: white;
-  font-size: 17px;
-  font-weight: 550;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px; }
-  .search .input-container input {
-    height: 22px;
-    width: 200px;
-    padding-left: 5px;
-    margin-right: 10px; }
-  .search .input-container button {
-    height: 28px;
-    font-size: 15px;
-    font-weight: 550;
-    padding: 0px 10px 0px 10px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
+  height: 40px;
+  background: linear-gradient(top, #45484d 0%, black 100%);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px; }
+  .search-container.IE {
+    background: #45484d; }
+  .search-container .title {
+    font-family: 'Concert One';
+    font-size: 17px;
     color: white;
-    background-color: #6883C2;
-    cursor: pointer; }
+    margin-left: 20px; }
+  .search-container .search-input-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: Calibri;
+    font-size: 12px;
+    font-weight: bold;
+    color: white; }
+    .search-container .search-input-wrapper .search-label {
+      margin-right: 5px; }
+    .search-container .search-input-wrapper .input-container {
+      font-family: Calibri;
+      font-size: 12px;
+      font-weight: bold;
+      color: white; }
+      .search-container .search-input-wrapper .input-container input {
+        font-family: Calibri;
+        font-weight: bold;
+        font-size: 12px;
+        color: white;
+        height: 26px;
+        width: 150px;
+        padding-left: 5px;
+        margin-right: 10px;
+        background-color: black;
+        border-radius: 5px;
+        border: none; }
+      .search-container .search-input-wrapper .input-container .search-button {
+        width: 80px;
+        height: 28px;
+        margin-right: 20px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        font-family: Calibri;
+        font-weight: bold;
+        font-size: 12px;
+        color: white;
+        background: linear-gradient(bottom, #5c77b5 0%, #748fce 100%);
+        cursor: pointer; }
+        .search-container .search-input-wrapper .input-container .search-button.IE {
+          background: #6f8ac9; }
 
 .videos-container {
+  width: calc(100% - 60px);
+  height: inherit;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  width: inherit;
-  margin-top: 20px; }
-  .videos-container .video-item {
-    width: 31.33%;
-    padding: 0px 10px 0px 10px;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 500; }
-    .videos-container .video-item .img-container {
-      width: 100%; }
-      .videos-container .video-item .img-container img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover; }
-    .videos-container .video-item .video-title-container {
-      width: 100%;
-      color: white;
-      background-color: black; }
-      .videos-container .video-item .video-title-container .video-title {
-        width: 100%;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        padding: 5px 0px 5px 0px;
-        margin-left: 5px; }
-    .videos-container .video-item .video-published-date {
+  align-items: center;
+  padding: 0px 20px 0px 20px;
+  font-family: Arial;
+  font-size: 10px;
+  font-weight: bold;
+  color: white; }
+  .videos-container .video-item-container {
+    width: 33.33%;
+    min-width: 200px;
+    height: 167px; }
+    .videos-container .video-item-container .video-item {
       position: relative;
-      bottom: 30px;
-      background-color: black;
-      color: white;
-      opacity: 0.7;
-      padding: 5px 0px 5px 5px; }
-  .videos-container .video-item:first-child {
-    padding-left: 20px; }
-  .videos-container .video-item:last-child {
-    padding-right: 20px; }
+      height: inherit;
+      cursor: pointer; }
+      .videos-container .video-item-container .video-item .img-container {
+        width: 100%; }
+        .videos-container .video-item-container .video-item .img-container img {
+          width: 100%;
+          height: 140px;
+          object-fit: cover; }
+      .videos-container .video-item-container .video-item .video-title-container {
+        width: 100%;
+        height: 25px;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        align-items: center; }
+        .videos-container .video-item-container .video-item .video-title-container .video-title {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          padding: 0px 10px 0px 10px; }
+      .videos-container .video-item-container .video-item .published-date-container {
+        position: absolute;
+        width: 100%;
+        height: 25px;
+        bottom: 2px;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center; }
+        .videos-container .video-item-container .video-item .published-date-container .published-date {
+          padding: 0px 0px 0px 10px; }
+  .videos-container .video-item-container:first-child {
+    margin-right: 10px; }
+  .videos-container .video-item-container:last-child {
+    margin-left: 10px; }
 
 .video-player {
   padding: 30px 0px 0px 30px; }
@@ -126,11 +168,16 @@ body {
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
-    width: 150px;
-    font-size: 15px;
-    font-weight: 550;
-    padding: 10px 10px 10px 10px;
+    align-items: center;
+    width: 80px;
+    height: 28px;
+    outline: none;
+    border: none;
     border-radius: 5px;
+    font-family: Calibri;
+    font-weight: bold;
+    font-size: 12px;
     color: white;
-    background-color: #6883C2;
+    background: #6f8ac9;
+    border-radius: 5px;
     cursor: pointer; }
